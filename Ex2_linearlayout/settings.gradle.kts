@@ -19,8 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HelloAndroid"
-include(":app")
-include(":app")
+rootProject.name = "Ex2_linearlayout"
 include(":app")
  
