@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextA" type="id" />
+    <item name="editTextB" type="id" />
+    <item name="buttonCong" type="id">1</item>
+    <item name="buttonTru" type="id" />
+    <item name="buttonNhan" type="id" />
+    <item name="buttonChia" type="id" />
+</resources>
