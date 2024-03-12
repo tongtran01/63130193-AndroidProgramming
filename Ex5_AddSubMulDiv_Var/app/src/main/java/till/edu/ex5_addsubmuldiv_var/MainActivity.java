@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 tvKetQua.setText(strKQ);
 
             }
-            
+
         });
 
     }
