@@ -1,8 +1,12 @@
 package till.edu.ex_6_listviewdemo;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +18,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<String> dsTenTinhThanhVN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //Hiển thị dữ liệu lên listView
         //b1+ cần dữ liệu
         //cần biến phù hợp để chứa dữ liệu
-        ArrayList<String> dsTenTinhThanhVN;
+
         dsTenTinhThanhVN = new ArrayList<String>();// tạo thể hiện cụ thể, xin mới
         // thêm dữ liệu ờ đây
         dsTenTinhThanhVN.add("Hà Nội");
@@ -40,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         //
         ListView lvTenTinhThanh = findViewById(R.id.lvDanhSachTT);
         lvTenTinhThanh.setAdapter(adapterTinhThanh);
+        //lang nghe
+        lvTenTinhThanh.setOnItemClickListener(BoLangNghevaXL);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -47,4 +55,24 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+    // tao bo lang nghe xu ly xu kien ONItemclick
+    // vd bo lang nghe xu ly
+    AdapterView.OnItemClickListener BoLangNghevaXL = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            // code xu ly o dau
+            //i la vi tri phan tu vua dc click
+            //vd khac, thay vi hien vi tri thi ta hien gia tri
+            // lay gia tri tu phan tu thu i
+           String strTenTinhChon = dsTenTinhThanhVN.get(i);
+
+
+            Toast.makeText(MainActivity.this, strTenTinhChon ,
+                    Toast.LENGTH_LONG).show();
+
+
+        }
+    };
+
+
 }
