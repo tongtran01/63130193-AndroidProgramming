@@ -73,16 +73,19 @@ public class MainActivity extends AppCompatActivity {
     // vd bo lang nghe xu ly
     AdapterView.OnItemClickListener BoLangNghevaXL = new AdapterView.OnItemClickListener() {
         @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             // code xu ly o dau
             //i la vi tri phan tu vua dc click
             //vd khac, thay vi hien vi tri thi ta hien gia tri
             // lay gia tri tu phan tu thu i
-            String strTenTinhChon = dsTenTinhThanhVN.get(i);
+            String strTenTinhChon = dsTenTinhThanhVN.get(position);
 
 
             Toast.makeText(MainActivity.this, strTenTinhChon ,
                     Toast.LENGTH_LONG).show();
+
+            select = position;
+            edtinf.setText(dsTenTinhThanhVN.get(position));
 
 
         }
