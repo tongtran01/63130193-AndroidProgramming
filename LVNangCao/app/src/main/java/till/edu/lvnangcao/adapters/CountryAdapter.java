@@ -19,7 +19,7 @@ public class CountryAdapter extends BaseAdapter {
     Context mContext;
     LayoutInflater mInflater;
 
-    public CountryAdapter(ArrayList<Country> listQG, Context mContext, LayoutInflater mInflater) {
+    public CountryAdapter(Context mContext,ArrayList<Country> listQG) {
         this.listQG = listQG;
         this.mContext = mContext;
         mInflater = LayoutInflater.from(mContext);
@@ -44,11 +44,12 @@ public class CountryAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         CountryViewHolder viewTraVe;
+        viewTraVe = new CountryViewHolder();
         if(convertView == null  ){
             convertView = mInflater.inflate(R.layout.country_item,null);
-            viewTraVe = new CountryViewHolder();
-            viewTraVe.textViewNationName = convertView.findViewById(R.id.tvSoLuongDan);
-            viewTraVe.textViewPopulation = convertView.findViewById(R.id.tvTenQG);
+
+            viewTraVe.textViewNationName = convertView.findViewById(R.id.tvTenQG);
+            viewTraVe.textViewPopulation = convertView.findViewById(R.id.tvSoLuongDan);
             viewTraVe.imageViewFlag= convertView.findViewById(R.id.imgLaCo);
             convertView.setTag(viewTraVe);
         }
@@ -61,7 +62,7 @@ public class CountryAdapter extends BaseAdapter {
         int soDan = quocGiaHienThi.getSoLuongDan();
         String tenLaCo = quocGiaHienThi.getTenFileAnhLaCo();
         viewTraVe.textViewNationName.setText(tenQG);
-        viewTraVe.textViewPopulation.setText(soDan);
+        viewTraVe.textViewPopulation.setText(String.valueOf(soDan));
         // tim i file anh o day
         int idAnhLaCo = TimIDAnhTheoTenFile(tenLaCo);
         viewTraVe.imageViewFlag.setImageResource(idAnhLaCo);
@@ -72,7 +73,7 @@ public class CountryAdapter extends BaseAdapter {
         String tenPak = mContext.getPackageName();
         int id = mContext.getResources().
                             getIdentifier(
-                                    tenFileAnh,"mimap",tenPak
+                                    tenFileAnh,"mipmap",tenPak
                             );
         return id;
 
