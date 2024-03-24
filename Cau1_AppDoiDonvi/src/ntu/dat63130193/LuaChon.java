@@ -19,7 +19,6 @@ import javax.swing.SwingConstants;
 public class LuaChon {
 
 	private JFrame frame;
-	private JTextField txtS;
 
 	/**
 	 * Launch the application.
@@ -53,49 +52,46 @@ public class LuaChon {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnCurrency = new JButton("Currency");
-		btnCurrency.setBackground(new Color(0, 0, 0));
-		btnCurrency.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnCurrency.setBounds(184, 153, 188, 42);
-		frame.getContentPane().add(btnCurrency);
-		
 		JButton btnWidth = new JButton("Width");
-		btnWidth.setBackground(Color.ORANGE);
-		btnWidth.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnWidth.setBounds(184, 231, 188, 42);
+		btnWidth.setBackground(new Color(0, 223, 223));
+		btnWidth.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
+		btnWidth.setBounds(173, 227, 196, 48);
 		frame.getContentPane().add(btnWidth);
 		
 		JButton btnLength = new JButton("Length");
-		btnLength.setBackground(Color.ORANGE);
-		btnLength.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnLength.setBounds(184, 308, 188, 48);
+		btnLength.setBackground(new Color(0, 179, 179));
+		btnLength.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
+		btnLength.setBounds(173, 300, 196, 48);
 		frame.getContentPane().add(btnLength);
 		
 		JButton btnRate = new JButton("Rate this work");
-		btnRate.setBackground(Color.ORANGE);
-		btnRate.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnRate.setBackground(new Color(0, 223, 223));
+		btnRate.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
 		btnRate.setBounds(52, 376, 131, 31);
 		frame.getContentPane().add(btnRate);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.setBackground(Color.ORANGE);
-		btnExit.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnExit.setBounds(392, 376, 98, 31);
+		btnExit.setBackground(new Color(0, 198, 198));
+		btnExit.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
+		btnExit.setBounds(381, 378, 84, 27);
 		frame.getContentPane().add(btnExit);
 		
 		JLabel lblNewLabel = new JLabel("Welcome to Converter");
 		lblNewLabel.setBackground(Color.GREEN);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(173, 11, 220, 31);
+		lblNewLabel.setBounds(173, 23, 220, 31);
 		frame.getContentPane().add(lblNewLabel);
 		
-		txtS = new JTextField();
-		txtS.setBackground(Color.WHITE);
-		txtS.setHorizontalAlignment(SwingConstants.CENTER);
-		txtS.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtS.setText("Temperature");
-		txtS.setBounds(184, 76, 188, 42);
-		frame.getContentPane().add(txtS);
-		txtS.setColumns(10);
+		JButton btnCurrency = new JButton("Currency");
+		btnCurrency.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
+		btnCurrency.setBackground(new Color(60, 255, 255));
+		btnCurrency.setBounds(173, 154, 196, 48);
+		frame.getContentPane().add(btnCurrency);
+		
+		JButton btnAtemperature = new JButton("Temperature");
+		btnAtemperature.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
+		btnAtemperature.setBackground(new Color(175, 238, 238));
+		btnAtemperature.setBounds(173, 80, 196, 48);
+		frame.getContentPane().add(btnAtemperature);
 	}
 }
