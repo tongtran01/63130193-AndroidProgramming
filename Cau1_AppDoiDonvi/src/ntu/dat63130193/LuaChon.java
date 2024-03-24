@@ -14,10 +14,12 @@ import java.awt.SystemColor;
 import javax.swing.UIManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class LuaChon {
 
 	private JFrame frame;
+	private JTextField txtS;
 
 	/**
 	 * Launch the application.
@@ -52,31 +54,31 @@ public class LuaChon {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnCurrency = new JButton("Currency");
-		btnCurrency.setBackground(Color.GREEN);
+		btnCurrency.setBackground(new Color(0, 0, 0));
 		btnCurrency.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnCurrency.setBounds(184, 153, 188, 42);
 		frame.getContentPane().add(btnCurrency);
 		
 		JButton btnWidth = new JButton("Width");
-		btnWidth.setBackground(Color.GREEN);
+		btnWidth.setBackground(Color.ORANGE);
 		btnWidth.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnWidth.setBounds(184, 231, 188, 42);
 		frame.getContentPane().add(btnWidth);
 		
 		JButton btnLength = new JButton("Length");
-		btnLength.setBackground(Color.GREEN);
+		btnLength.setBackground(Color.ORANGE);
 		btnLength.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnLength.setBounds(184, 308, 188, 48);
 		frame.getContentPane().add(btnLength);
 		
 		JButton btnRate = new JButton("Rate this work");
-		btnRate.setBackground(Color.GREEN);
+		btnRate.setBackground(Color.ORANGE);
 		btnRate.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnRate.setBounds(52, 376, 131, 31);
 		frame.getContentPane().add(btnRate);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.setBackground(Color.GREEN);
+		btnExit.setBackground(Color.ORANGE);
 		btnExit.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnExit.setBounds(392, 376, 98, 31);
 		frame.getContentPane().add(btnExit);
@@ -87,14 +89,13 @@ public class LuaChon {
 		lblNewLabel.setBounds(173, 11, 220, 31);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JButton btnAtem = new JButton("Temperature");
-		btnAtem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnAtem.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnAtem.setBackground(Color.GREEN);
-		btnAtem.setBounds(184, 73, 188, 42);
-		frame.getContentPane().add(btnAtem);
+		txtS = new JTextField();
+		txtS.setBackground(Color.WHITE);
+		txtS.setHorizontalAlignment(SwingConstants.CENTER);
+		txtS.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtS.setText("Temperature");
+		txtS.setBounds(184, 76, 188, 42);
+		frame.getContentPane().add(txtS);
+		txtS.setColumns(10);
 	}
 }
