@@ -58,22 +58,16 @@ public class LuaChon {
 		btnWidth.setBounds(173, 227, 196, 48);
 		frame.getContentPane().add(btnWidth);
 		
-		JButton btnLength = new JButton("Length");
-		btnLength.setBackground(new Color(0, 179, 179));
-		btnLength.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnLength.setBounds(173, 300, 196, 48);
-		frame.getContentPane().add(btnLength);
-		
 		JButton btnRate = new JButton("Rate this work");
 		btnRate.setBackground(new Color(0, 223, 223));
 		btnRate.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnRate.setBounds(52, 376, 131, 31);
+		btnRate.setBounds(45, 303, 131, 31);
 		frame.getContentPane().add(btnRate);
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.setBackground(new Color(0, 198, 198));
 		btnExit.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnExit.setBounds(381, 378, 84, 27);
+		btnExit.setBounds(363, 305, 84, 27);
 		frame.getContentPane().add(btnExit);
 		
 		JLabel lblNewLabel = new JLabel("Welcome to Converter");
@@ -82,13 +76,17 @@ public class LuaChon {
 		lblNewLabel.setBounds(173, 23, 220, 31);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JButton btnCurrency = new JButton("Currency");
+		JButton btnCurrency = new JButton("Distance");
 		btnCurrency.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
 		btnCurrency.setBackground(new Color(60, 255, 255));
 		btnCurrency.setBounds(173, 154, 196, 48);
 		frame.getContentPane().add(btnCurrency);
 		
-		JButton btnAtemperature = new JButton("Temperature");
+		JButton btnAtemperature = new JButton("Pressure");
+		btnAtemperature.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnAtemperature.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
 		btnAtemperature.setBackground(new Color(175, 238, 238));
 		btnAtemperature.setBounds(173, 80, 196, 48);
