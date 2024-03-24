@@ -19,6 +19,10 @@ import javax.swing.SwingConstants;
 public class LuaChon {
 
 	private JFrame frame;
+	private JButton btnDistance;
+	private JButton btnTemperature;
+	private JButton btnPressue;
+	private JButton btnExit;
 
 	/**
 	 * Launch the application.
@@ -48,48 +52,78 @@ public class LuaChon {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 560, 505);
+		frame.getContentPane().setBackground(new Color(128, 128, 192));
+		frame.setBounds(100, 100, 696, 573);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnWidth = new JButton("Width");
-		btnWidth.setBackground(new Color(0, 223, 223));
-		btnWidth.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnWidth.setBounds(173, 227, 196, 48);
-		frame.getContentPane().add(btnWidth);
-		
-		JButton btnRate = new JButton("Rate this work");
-		btnRate.setBackground(new Color(0, 223, 223));
-		btnRate.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnRate.setBounds(45, 303, 131, 31);
-		frame.getContentPane().add(btnRate);
-		
-		JButton btnExit = new JButton("Exit");
-		btnExit.setBackground(new Color(0, 198, 198));
-		btnExit.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnExit.setBounds(363, 305, 84, 27);
-		frame.getContentPane().add(btnExit);
-		
 		JLabel lblNewLabel = new JLabel("Welcome to Converter");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBackground(Color.GREEN);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(173, 23, 220, 31);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setBounds(188, 28, 345, 75);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JButton btnCurrency = new JButton("Distance");
-		btnCurrency.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnCurrency.setBackground(new Color(60, 255, 255));
-		btnCurrency.setBounds(173, 154, 196, 48);
-		frame.getContentPane().add(btnCurrency);
+		btnDistance = new JButton("Distance");
 		
-		JButton btnAtemperature = new JButton("Pressure");
-		btnAtemperature.addActionListener(new ActionListener() {
+		btnDistance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DoiKhoangCach khoangcach = new DoiKhoangCach();
+				frame.setVisible(false);
+				khoangcach.setVisible(true);
+				
 			}
 		});
-		btnAtemperature.setFont(new Font("Yu Gothic", Font.PLAIN, 15));
-		btnAtemperature.setBackground(new Color(175, 238, 238));
-		btnAtemperature.setBounds(173, 80, 196, 48);
-		frame.getContentPane().add(btnAtemperature);
+		btnDistance.setFont(new Font("Verdana", Font.PLAIN, 15));
+		btnDistance.setBounds(262, 134, 163, 65);
+		frame.getContentPane().add(btnDistance);
+		
+		btnTemperature = new JButton("Temperature");
+		btnTemperature.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				DoiNhietDo ND = new DoiNhietDo();
+				frame.setVisible(false);
+				ND.setVisible(true);
+				
+			}
+		});
+		
+		btnTemperature.setFont(new Font("Verdana", Font.PLAIN, 15));
+		btnTemperature.setBounds(262, 226, 163, 65);
+		frame.getContentPane().add(btnTemperature);
+		
+		btnPressue = new JButton("Pressue");
+		btnPressue.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				DoiApSuat ApSuat = new DoiApSuat();
+				frame.setVisible(false);
+				ApSuat.setVisible(true);
+				
+			}
+		});
+		
+		btnPressue.setFont(new Font("Verdana", Font.PLAIN, 15));
+		btnPressue.setBounds(262, 318, 163, 66);
+		frame.getContentPane().add(btnPressue);
+		
+		btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
+		
+		btnExit.setFont(new Font("Verdana", Font.PLAIN, 15));
+		btnExit.setBounds(262, 408, 163, 65);
+		frame.getContentPane().add(btnExit);
 	}
 }

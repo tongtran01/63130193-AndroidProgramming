@@ -2,30 +2,31 @@ package ntu.dat63130193;
 
 import java.awt.EventQueue;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Image;
-
-import javax.swing.SwingConstants;
-import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 
-public class DoiKhoangCach {
+public class DoiKhoangCach extends JFrame {
 
-	private JFrame frame;
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-	private JTextField textField_4;
 	private JTextField textField_5;
-	private JTextField txtMainMeny;
-	private JTextField txtClear;
-	private JTextField txtExit;
-	private JLabel lb2;
+	private JTextField textField_1;
+	private JTextField textField_4;
+	private JLabel lb1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -34,8 +35,8 @@ public class DoiKhoangCach {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DoiKhoangCach window = new DoiKhoangCach();
-					window.frame.setVisible(true);
+					DoiKhoangCach frame = new DoiKhoangCach();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -44,118 +45,113 @@ public class DoiKhoangCach {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
 	public DoiKhoangCach() {
-		initialize();
-	}
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 724, 515);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 147, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(81, 255, 255));
-		frame.setBounds(100, 100, 702, 572);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Distance");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setBounds(291, 39, 166, 42);
+		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setText("400");
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("Verdana", Font.PLAIN, 15));
+		textField.setBounds(165, 122, 133, 55);
+		contentPane.add(textField);
 		textField.setColumns(10);
-		textField.setBounds(122, 163, 156, 32);
-		frame.getContentPane().add(textField);
-		
-		textField_1 = new JTextField();
-		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_1.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_1.setColumns(10);
-		textField_1.setBounds(369, 163, 225, 32);
-		frame.getContentPane().add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setText("4");
-		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_2.setFont(new Font("Verdana", Font.PLAIN, 15));
 		textField_2.setColumns(10);
-		textField_2.setBounds(122, 244, 156, 32);
-		frame.getContentPane().add(textField_2);
+		textField_2.setBounds(407, 122, 122, 55);
+		contentPane.add(textField_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("m");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(334, 232, 46, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("cm");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(334, 134, 46, 31);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("km");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3.setBounds(334, 314, 46, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		JButton btnNewButton = new JButton("Convert");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setBounds(96, 394, 133, 42);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Exit");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_1.setBounds(300, 394, 122, 42);
+		contentPane.add(btnNewButton_1);
 		
 		textField_3 = new JTextField();
-		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_3.setFont(new Font("Verdana", Font.PLAIN, 15));
 		textField_3.setColumns(10);
-		textField_3.setBounds(369, 244, 225, 32);
-		frame.getContentPane().add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setText("0.04");
-		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_4.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_4.setColumns(10);
-		textField_4.setBounds(122, 319, 156, 32);
-		frame.getContentPane().add(textField_4);
+		textField_3.setBounds(407, 213, 122, 55);
+		contentPane.add(textField_3);
 		
 		textField_5 = new JTextField();
-		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_5.setFont(new Font("Verdana", Font.PLAIN, 15));
 		textField_5.setColumns(10);
-		textField_5.setBounds(369, 319, 225, 32);
-		frame.getContentPane().add(textField_5);
+		textField_5.setBounds(407, 296, 122, 55);
+		contentPane.add(textField_5);
 		
-		txtMainMeny = new JTextField();
-		txtMainMeny.setText("Conversion");
-		txtMainMeny.setHorizontalAlignment(SwingConstants.CENTER);
-		txtMainMeny.setFont(new Font("Verdana", Font.PLAIN, 15));
-		txtMainMeny.setColumns(10);
-		txtMainMeny.setBounds(64, 399, 129, 32);
-		frame.getContentPane().add(txtMainMeny);
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(165, 213, 133, 55);
+		contentPane.add(textField_1);
 		
-		txtClear = new JTextField();
-		txtClear.setText("Clear");
-		txtClear.setHorizontalAlignment(SwingConstants.CENTER);
-		txtClear.setFont(new Font("Verdana", Font.PLAIN, 15));
-		txtClear.setColumns(10);
-		txtClear.setBounds(244, 399, 129, 32);
-		frame.getContentPane().add(txtClear);
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(165, 296, 134, 55);
+		contentPane.add(textField_4);
 		
-		txtExit = new JTextField();
-		txtExit.setText("Exit");
-		txtExit.setHorizontalAlignment(SwingConstants.CENTER);
-		txtExit.setFont(new Font("Verdana", Font.PLAIN, 15));
-		txtExit.setColumns(10);
-		txtExit.setBounds(423, 399, 129, 32);
-		frame.getContentPane().add(txtExit);
+		lb1 = new JLabel("");
+		Image user = new ImageIcon(this.getClass().getResource("/S2.jpg")).getImage();
+		lb1.setIcon(new ImageIcon(user));
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Cm");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1.setBounds(320, 168, 28, 23);
-		frame.getContentPane().add(lblNewLabel_1_1);
+		lb1.setBounds(550, 11, 148, 154);
+		contentPane.add(lb1);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("M");
-		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1_1.setBounds(320, 249, 28, 23);
-		frame.getContentPane().add(lblNewLabel_1_1_1);
-		
-		JLabel lblNewLabel_1_1_2 = new JLabel("Km");
-		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1_2.setBounds(320, 324, 28, 23);
-		frame.getContentPane().add(lblNewLabel_1_1_2);
-		
-		JLabel lblDistanceConversion = new JLabel("Distance Conversion");
-		lblDistanceConversion.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDistanceConversion.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblDistanceConversion.setBounds(64, 75, 405, 32);
-		frame.getContentPane().add(lblDistanceConversion);
-		Image user = new ImageIcon(this.getClass().getResource("/S1.jpg")).getImage();
-		
-		lb2 = new JLabel("");
-		Image Imga2 = new ImageIcon(this.getClass().getResource("/S2.jpg")).getImage();
-		lb2.setIcon(new ImageIcon(Imga2));
-		lb2.setBounds(479, 0, 174, 162);
-		frame.getContentPane().add(lb2);
+		btnNewButton_2 = new JButton("Reset");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+				 textField.setText("");     // Reset textField
+				    textField_1.setText("");   // Reset textField_1
+				    textField_2.setText("");   // Reset textField_2
+				    textField_3.setText("");   // Reset textField_3
+				    textField_4.setText("");   // Reset textField_4
+				    textField_5.setText("");   // Reset textField_5
+			}
+		});
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_2.setBounds(496, 394, 122, 42);
+		contentPane.add(btnNewButton_2);
 	}
+	
+	
 
 }

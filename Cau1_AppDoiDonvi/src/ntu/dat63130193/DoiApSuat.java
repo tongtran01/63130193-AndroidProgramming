@@ -1,29 +1,25 @@
 package ntu.dat63130193;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import java.awt.Color;
+import javax.swing.border.EmptyBorder;
 
-public class DoiApSuat {
+public class DoiApSuat extends JFrame {
 
-	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField txtMainMenu;
-	private JTextField txtClear;
-	private JTextField txtExit;
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
@@ -32,8 +28,8 @@ public class DoiApSuat {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DoiApSuat window = new DoiApSuat();
-					window.frame.setVisible(true);
+					DoiApSuat frame = new DoiApSuat();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,117 +38,160 @@ public class DoiApSuat {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
 	public DoiApSuat() {
-		initialize();
-	}
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 724, 515);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(128, 128, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 566, 491);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JLabel lblPressureConversion = new JLabel("Pressure Conversion");
-		lblPressureConversion.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblPressureConversion.setBounds(159, 41, 183, 32);
-		frame.getContentPane().add(lblPressureConversion);
+		JLabel lblNewLabel = new JLabel("Pressue");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setBounds(291, 39, 166, 42);
+		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setText("15");
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField.setColumns(10);
-		textField.setBounds(71, 117, 129, 32);
-		frame.getContentPane().add(textField);
+		JTextField txtInput1 = new JTextField();
+		txtInput1.setBounds(165, 122, 133, 55);
+		contentPane.add(txtInput1);
+		txtInput1.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setText("15");
-		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_1.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_1.setColumns(10);
-		textField_1.setBounds(71, 197, 129, 32);
-		frame.getContentPane().add(textField_1);
+		JTextField txtOutput1 = new JTextField();
+		txtOutput1.setColumns(10);
+		txtOutput1.setBounds(407, 122, 122, 55);
+		contentPane.add(txtOutput1);
 		
-		textField_2 = new JTextField();
-		textField_2.setText("15");
-		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_2.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_2.setColumns(10);
-		textField_2.setBounds(71, 268, 129, 32);
-		frame.getContentPane().add(textField_2);
+		JLabel lblNewLabel_1 = new JLabel("bar");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(334, 224, 46, 25);
+		contentPane.add(lblNewLabel_1);
 		
-		textField_3 = new JTextField();
-		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_3.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_3.setColumns(10);
-		textField_3.setBounds(296, 117, 129, 32);
-		frame.getContentPane().add(textField_3);
+		JLabel lblNewLabel_2 = new JLabel("P");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(334, 134, 46, 31);
+		contentPane.add(lblNewLabel_2);
 		
-		textField_4 = new JTextField();
-		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_4.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_4.setColumns(10);
-		textField_4.setBounds(296, 197, 129, 32);
-		frame.getContentPane().add(textField_4);
+		JLabel lblNewLabel_3 = new JLabel("at");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3.setBounds(334, 314, 46, 25);
+		contentPane.add(lblNewLabel_3);
+		JTextField txtOutput2 = new JTextField();
+		txtOutput2.setColumns(10);
+		txtOutput2.setBounds(407, 213, 122, 55);
+		contentPane.add(txtOutput2);
 		
-		textField_5 = new JTextField();
-		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_5.setFont(new Font("Verdana", Font.PLAIN, 15));
-		textField_5.setColumns(10);
-		textField_5.setBounds(296, 268, 129, 32);
-		frame.getContentPane().add(textField_5);
+		JTextField txtOutput3 = new JTextField();
+		txtOutput3.setColumns(10);
+		txtOutput3.setBounds(407, 296, 122, 55);
+		contentPane.add(txtOutput3);
+		JTextField txtInput2 = new JTextField();
+		txtInput2.setColumns(10);
+		txtInput2.setBounds(165, 213, 133, 55);
+		contentPane.add(txtInput2);
 		
-		txtMainMenu = new JTextField();
-		txtMainMenu.setBackground(new Color(255, 255, 255));
-		txtMainMenu.setText("Conversion");
-		txtMainMenu.setHorizontalAlignment(SwingConstants.CENTER);
-		txtMainMenu.setFont(new Font("Verdana", Font.PLAIN, 15));
-		txtMainMenu.setColumns(10);
-		txtMainMenu.setBounds(27, 368, 129, 32);
-		frame.getContentPane().add(txtMainMenu);
+		JTextField txtInput3 = new JTextField();
+		txtInput3.setColumns(10);
+		txtInput3.setBounds(165, 296, 134, 55);
+		contentPane.add(txtInput3);
 		
-		txtClear = new JTextField();
-		txtClear.setText("Clear");
-		txtClear.setHorizontalAlignment(SwingConstants.CENTER);
-		txtClear.setFont(new Font("Verdana", Font.PLAIN, 15));
-		txtClear.setColumns(10);
-		txtClear.setBounds(192, 368, 129, 32);
-		frame.getContentPane().add(txtClear);
+		JButton btnNewButton = new JButton("Convert");
+		btnNewButton.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        if (!txtInput1.getText().isEmpty()) {
+		            // Chuyển đổi từ P sang các đơn vị khác
+		            double pascal = Double.parseDouble(txtInput1.getText());
+		            double bar = pascal * 0.00001;
+		            double atm = pascal * 0.000009869;
+		            txtOutput1.setText(String.format("%.2f", pascal));
+		            txtOutput2.setText(String.format("%.2f", bar));
+		            txtOutput3.setText(String.format("%.2f", atm));
+		        }
+		        
+		        if (!txtInput2.getText().isEmpty()) {
+		            // Chuyển đổi từ bar sang các đơn vị khác
+		            double bar = Double.parseDouble(txtInput2.getText());
+		            double pascal = bar * 100000;
+		            double atm = bar * 0.986923;
+		            txtOutput1.setText(String.format("%.2f", pascal));
+		            txtOutput2.setText(String.format("%.2f", bar));
+		            txtOutput3.setText(String.format("%.2f", atm));
+		        }
+		        
+		        if (!txtInput3.getText().isEmpty()) {
+		            // Chuyển đổi từ atm sang các đơn vị khác
+		            double atm = Double.parseDouble(txtInput3.getText());
+		            double pascal = atm * 101325;
+		            double bar = atm * 1.01325;
+		            txtOutput1.setText(String.format("%.2f", pascal));
+		            txtOutput2.setText(String.format("%.2f", bar));
+		            txtOutput3.setText(String.format("%.2f", atm));
+		        }
+		    }
+		});
+
+
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setBounds(93, 394, 133, 42);
+		contentPane.add(btnNewButton);
 		
-		txtExit = new JTextField();
-		txtExit.setToolTipText("");
-		txtExit.setText("Exit");
-		txtExit.setHorizontalAlignment(SwingConstants.CENTER);
-		txtExit.setFont(new Font("Verdana", Font.PLAIN, 15));
-		txtExit.setColumns(10);
-		txtExit.setBounds(364, 368, 129, 32);
-		frame.getContentPane().add(txtExit);
+		JButton btnNewButton_1 = new JButton("Exit");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Pa");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1.setBounds(235, 122, 28, 23);
-		frame.getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("bar");
-		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1_1.setBounds(235, 202, 28, 23);
-		frame.getContentPane().add(lblNewLabel_1_1_1);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_1.setBounds(297, 394, 122, 42);
+		contentPane.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_1_1_2 = new JLabel("at\r\n");
-		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1_2.setBounds(235, 273, 28, 23);
-		frame.getContentPane().add(lblNewLabel_1_1_2);
 		
-		JLabel lb3 = new JLabel("");
-		Image Imga2 = new ImageIcon(this.getClass().getResource("/S3.jpg")).getImage();
-		lb3.setIcon(new ImageIcon(Imga2));
-		lb3.setBounds(424, 41, 87, 79);
-		frame.getContentPane().add(lb3);
+		
+		
+		
+		JLabel lb2 = new JLabel("");
+		Image user = new ImageIcon(this.getClass().getResource("/S3.jpg")).getImage();
+		lb2.setIcon(new ImageIcon(user));
+		
+		lb2.setBounds(550, 11, 148, 154);
+		contentPane.add(lb2);
+		
+		JButton btnNewButton_1_1 = new JButton("Reset");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			
+				 txtInput1.setText("");     // Reset textField
+				    txtInput2.setText("");   // Reset textField_1
+				    txtOutput1.setText("");   // Reset textField_2
+				    txtOutput2.setText("");   // Reset textField_3
+				    txtInput3.setText("");   // Reset textField_4
+				    txtOutput3.setText("");   // Reset textField_5
+				 
+			 
+			}
+		});
+		
+		
+		btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_1_1.setBounds(482, 394, 122, 42);
+		contentPane.add(btnNewButton_1_1);
+		
+		
 	}
+	
 
 }
