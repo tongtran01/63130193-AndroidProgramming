@@ -2,9 +2,12 @@ package ntu.dat63130193;
 
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Color;
@@ -56,7 +59,7 @@ public class DoiApSuat {
 		
 		JLabel lblPressureConversion = new JLabel("Pressure Conversion");
 		lblPressureConversion.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblPressureConversion.setBounds(170, 45, 183, 32);
+		lblPressureConversion.setBounds(159, 41, 183, 32);
 		frame.getContentPane().add(lblPressureConversion);
 		
 		textField = new JTextField();
@@ -144,6 +147,12 @@ public class DoiApSuat {
 		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_1_1_2.setBounds(235, 273, 28, 23);
 		frame.getContentPane().add(lblNewLabel_1_1_2);
+		
+		JLabel lb3 = new JLabel("");
+		Image Imga2 = new ImageIcon(this.getClass().getResource("/S3.jpg")).getImage();
+		lb3.setIcon(new ImageIcon(Imga2));
+		lb3.setBounds(424, 41, 87, 79);
+		frame.getContentPane().add(lb3);
 	}
 
 }
