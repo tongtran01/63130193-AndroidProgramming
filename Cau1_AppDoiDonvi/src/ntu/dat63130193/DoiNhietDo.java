@@ -137,7 +137,7 @@ public class DoiNhietDo extends JFrame {
 			}
 		});
 		
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnNewButton.setBounds(91, 394, 133, 42);
 		contentPane.add(btnNewButton);
 		
@@ -150,7 +150,7 @@ public class DoiNhietDo extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnNewButton_1.setBounds(293, 394, 122, 42);
 		contentPane.add(btnNewButton_1);
 		
@@ -187,7 +187,7 @@ public class DoiNhietDo extends JFrame {
 			}
 		});
 		
-		btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnNewButton_1_1.setBounds(485, 394, 122, 42);
 		contentPane.add(btnNewButton_1_1);
 		

@@ -58,8 +58,8 @@ public class DoiKhoangCach extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Distance");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(291, 39, 166, 42);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 33));
+		lblNewLabel.setBounds(274, 29, 148, 55);
 		contentPane.add(lblNewLabel);
 		
 		txtInput1 = new JTextField();
@@ -69,22 +69,22 @@ public class DoiKhoangCach extends JFrame {
 		
 		txtOutput1 = new JTextField();
 		txtOutput1.setColumns(10);
-		txtOutput1.setBounds(407, 122, 122, 55);
+		txtOutput1.setBounds(407, 122, 133, 55);
 		contentPane.add(txtOutput1);
 		
 		JLabel lblNewLabel_1 = new JLabel("m");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(334, 232, 46, 14);
+		lblNewLabel_1.setBounds(345, 229, 22, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("cm");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(334, 134, 46, 31);
+		lblNewLabel_2.setBounds(345, 130, 46, 31);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("km");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_3.setBounds(334, 314, 46, 14);
+		lblNewLabel_3.setBounds(345, 312, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Convert");
@@ -104,9 +104,9 @@ public class DoiKhoangCach extends JFrame {
 		        if (!txtInput2.getText().isEmpty()) {
 		            // Chuyển đổi từ cm sang các đơn vị khác
 		            double centimeter = Double.parseDouble(txtInput2.getText());
-		            double meter = centimeter * 0.01;
+		            double meter1 = centimeter *100;
 		            double kilometer1 = centimeter * 0.001;
-		            txtOutput1.setText(String.format("%.2f", meter));
+		            txtOutput1.setText(String.format("%.2f", meter1));
 		            txtOutput2.setText(String.format("%.2f", centimeter));
 		            txtOutput3.setText(String.format("%.3f", kilometer1));
 		        }
@@ -142,12 +142,12 @@ public class DoiKhoangCach extends JFrame {
 		
 		txtOutput2 = new JTextField();
 		txtOutput2.setColumns(10);
-		txtOutput2.setBounds(407, 213, 122, 55);
+		txtOutput2.setBounds(407, 213, 133, 55);
 		contentPane.add(txtOutput2);
 		
 		txtOutput3 = new JTextField();
 		txtOutput3.setColumns(10);
-		txtOutput3.setBounds(407, 296, 122, 55);
+		txtOutput3.setBounds(407, 296, 133, 55);
 		contentPane.add(txtOutput3);
 		
 		txtInput2 = new JTextField();

@@ -74,8 +74,8 @@ public class LuaChon {
 				
 			}
 		});
-		btnDistance.setFont(new Font("Verdana", Font.PLAIN, 15));
-		btnDistance.setBounds(262, 134, 163, 65);
+		btnDistance.setFont(new Font("Verdana", Font.PLAIN, 18));
+		btnDistance.setBounds(238, 134, 198, 65);
 		frame.getContentPane().add(btnDistance);
 		
 		btnTemperature = new JButton("Temperature");
@@ -91,8 +91,8 @@ public class LuaChon {
 			}
 		});
 		
-		btnTemperature.setFont(new Font("Verdana", Font.PLAIN, 15));
-		btnTemperature.setBounds(262, 226, 163, 65);
+		btnTemperature.setFont(new Font("Verdana", Font.PLAIN, 18));
+		btnTemperature.setBounds(238, 226, 198, 65);
 		frame.getContentPane().add(btnTemperature);
 		
 		btnPressue = new JButton("Pressue");
@@ -108,8 +108,8 @@ public class LuaChon {
 			}
 		});
 		
-		btnPressue.setFont(new Font("Verdana", Font.PLAIN, 15));
-		btnPressue.setBounds(262, 318, 163, 66);
+		btnPressue.setFont(new Font("Verdana", Font.PLAIN, 18));
+		btnPressue.setBounds(238, 318, 198, 66);
 		frame.getContentPane().add(btnPressue);
 		
 		btnExit = new JButton("Exit");
@@ -122,8 +122,8 @@ public class LuaChon {
 			}
 		});
 		
-		btnExit.setFont(new Font("Verdana", Font.PLAIN, 15));
-		btnExit.setBounds(262, 408, 163, 65);
+		btnExit.setFont(new Font("Verdana", Font.PLAIN, 18));
+		btnExit.setBounds(238, 408, 198, 65);
 		frame.getContentPane().add(btnExit);
 	}
 }

@@ -56,46 +56,46 @@ public class DoiApSuat extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JTextField txtInput1 = new JTextField();
-		txtInput1.setBounds(165, 122, 133, 55);
+		txtInput1.setBounds(150, 122, 148, 55);
 		contentPane.add(txtInput1);
 		txtInput1.setColumns(10);
 		
 		JTextField txtOutput1 = new JTextField();
 		txtOutput1.setColumns(10);
-		txtOutput1.setBounds(407, 122, 122, 55);
+		txtOutput1.setBounds(407, 122, 133, 55);
 		contentPane.add(txtOutput1);
 		
 		JLabel lblNewLabel_1 = new JLabel("bar");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(334, 224, 46, 25);
+		lblNewLabel_1.setBounds(344, 224, 46, 25);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("P");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(334, 134, 46, 31);
+		lblNewLabel_2.setBounds(351, 130, 46, 31);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("at");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_3.setBounds(334, 314, 46, 25);
+		lblNewLabel_3.setBounds(344, 314, 46, 25);
 		contentPane.add(lblNewLabel_3);
 		JTextField txtOutput2 = new JTextField();
 		txtOutput2.setColumns(10);
-		txtOutput2.setBounds(407, 213, 122, 55);
+		txtOutput2.setBounds(407, 213, 133, 55);
 		contentPane.add(txtOutput2);
 		
 		JTextField txtOutput3 = new JTextField();
 		txtOutput3.setColumns(10);
-		txtOutput3.setBounds(407, 296, 122, 55);
+		txtOutput3.setBounds(407, 303, 133, 55);
 		contentPane.add(txtOutput3);
 		JTextField txtInput2 = new JTextField();
 		txtInput2.setColumns(10);
-		txtInput2.setBounds(165, 213, 133, 55);
+		txtInput2.setBounds(150, 213, 148, 55);
 		contentPane.add(txtInput2);
 		
 		JTextField txtInput3 = new JTextField();
 		txtInput3.setColumns(10);
-		txtInput3.setBounds(165, 296, 134, 55);
+		txtInput3.setBounds(150, 303, 148, 55);
 		contentPane.add(txtInput3);
 		
 		JButton btnNewButton = new JButton("Convert");
@@ -151,7 +151,7 @@ public class DoiApSuat extends JFrame {
 		
 		
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton_1.setBounds(297, 394, 122, 42);
+		btnNewButton_1.setBounds(291, 394, 122, 42);
 		contentPane.add(btnNewButton_1);
 		
 		
