@@ -121,6 +121,15 @@
 
             </RelativeLayout>
 
+            <EditText
+                android:id="@+id/edkq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:hint="50"
+                android:textSize="29sp" />
 
 
 
@@ -129,7 +138,49 @@
 
     </LinearLayout>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/textheight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Height (m)"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageheight"
+                android:layout_width="53dp"
+                android:layout_height="42dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="41dp"
+                android:layout_toStartOf="@id/textheight"
+                android:src="@drawable/height" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:ems="5"
+            android:hint="1.7"
+            android:inputType="number|numberDecimal"
+            android:textSize="29sp" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
