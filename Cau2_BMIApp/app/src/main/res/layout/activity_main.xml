@@ -36,13 +36,15 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
+
+                    android:id="@+id/edkq"
                     android:layout_width="wrap_content"
-                    android:ems="5"
-                    android:textSize="29sp"
-                    android:hint="22"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content"/>
+                    android:ems="5"
+                    android:hint="22"
+                    android:textSize="29sp" />
 
 
             </LinearLayout>
@@ -193,22 +195,24 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_margin="12dp"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="#19DB1F"
+
+        android:id="@+id/cardBtn"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="60dp"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="#19DB1F"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp">
 
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Calculator"
-            android:textSize="22sp"
-            android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_height="wrap_content">
+            android:textSize="22sp"
+            android:textStyle="bold">
 
         </TextView>
 
