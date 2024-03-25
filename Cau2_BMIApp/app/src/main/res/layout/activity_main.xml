@@ -91,10 +91,80 @@
         app:cardElevation="2dp"
         android:layout_width="match_parent"
         android:layout_height="110dp">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:text="Height"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textStyle="bold"
+
+            android:layout_height="wrap_content"/>
+
+
+
+
         <LinearLayout
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:text="m"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edtFeet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:inputType="number|numberDecimal">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:text="in"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <EditText
+                    android:hint="22sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:ems="5"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/edIns"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+            </LinearLayout>
 
 
 
@@ -103,6 +173,48 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:text="BMI result"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#19DB1F"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="12dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#19DB1F"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:text="Calculator"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 
