@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/examName"
@@ -13,7 +13,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="191dp"
         android:maxLines="1"
-        android:text="First Exam"
+        android:text="ten"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,62 +21,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/examPic"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/examName"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="371dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examName"
-        app:srcCompat="@drawable/dongho" />
-
 
     <TextView
         android:id="@+id/examDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/examName"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="265dp"
-        android:layout_toEndOf="@+id/examPic"
-        android:gravity="center"
-        android:text="May 23, 2015"
+        android:layout_marginTop="8dp"
+        android:text="ngay"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/examName" />
-
-    <ImageView
-        android:id="@+id/examPic2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/examDate"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="371dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/caimu" />
 
     <TextView
         android:id="@+id/examMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/examDate"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="271dp"
-        android:layout_toEndOf="@+id/examPic2"
-        android:gravity="center"
-        android:text="Best Of Luck"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="thong bao"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/examDate" />
 
@@ -92,5 +61,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/examPic"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/examName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examName"
+        app:srcCompat="@drawable/dongho" />
+
+    <ImageView
+        android:id="@+id/examPic2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/examName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examName"
+        app:srcCompat="@drawable/caimu" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
