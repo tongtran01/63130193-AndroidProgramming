@@ -58,6 +58,7 @@ public class Activity_Login extends AppCompatActivity {
                 if(userName.equals("tongtran") && passWord.equals("123") &&
                         isValidEmail(Mail)){
                     Intent intent = new Intent(Activity_Login.this,Activity_Home.class);
+                    intent.putExtra("USERNAME", userName);
                     startActivity(intent);
                 }
                 else {
