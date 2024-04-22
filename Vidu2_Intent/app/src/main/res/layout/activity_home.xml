@@ -26,7 +26,7 @@
         android:layout_marginTop="37dp"
         android:layout_marginEnd="271dp"
         android:text="Chào mừng"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -43,5 +43,43 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/btnQuiz1"
+        android:layout_width="177dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="261dp"
+        android:text="Quiz 1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="280dp"
+        android:layout_height="217dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        app:srcCompat="@drawable/ntu" />
+
+    <Button
+        android:id="@+id/btnQuiz2"
+        android:layout_width="177dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="488dp"
+        android:text="Quiz 2"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
