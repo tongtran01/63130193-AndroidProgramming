@@ -26,13 +26,18 @@ public class Activity_Home extends AppCompatActivity {
         });
         Button btn1 = findViewById(R.id.btnQuiz1);
         Button btn2 = findViewById(R.id.btnQuiz2);
+
+        TextView tvUsername = findViewById(R.id.tvUserName);
+
+
+        String name = getIntent().getStringExtra("userName");
+        tvUsername.setText(name);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Activity_Home.this, MainActivity.class);
-                String userName = getIntent().getStringExtra("USERNAME");
-                TextView tvUsername = findViewById(R.id.tvUserName);
-                tvUsername.setText(userName);
+
 
                 startActivity(intent1);
             }
