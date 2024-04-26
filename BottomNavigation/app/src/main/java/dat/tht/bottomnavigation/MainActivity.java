@@ -2,8 +2,11 @@ package dat.tht.bottomnavigation;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -12,30 +15,41 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+    private BottomNavigationView bottom_Navigation;
+    private FrameLayout frame_Layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
-        binding.bottomNavigation.SetOnItemSeletedListener(item -> {
-            switch (item.getItemid()) {
-                case R.id.home:
-                    replaceFragment(new HomeFragment());
+        bottom_Navigation = findViewById(R.id.bottomNavigationView);
 
-                    break;
-                case R.id.profile:
-                    replaceFragment(new HomeFragment());
-                    break;
-                case R.id.settings:
-                    replaceFragment(new HomeFragment());
-                    break;
+        frame_Layout = findViewById(R.id.fram_layout);
+        bottom_Navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int itemId = menuItem.getItemId();
+
+                if (itemId == R.id.home) {
+                    LoadFragment(new HomeFragment(), false);
+
+
+                } else if (itemId == R.id.profile) {
+                    LoadFragment(new ProfileFragment(), false);
+
+                } else if (itemId == R.id.settings) {
+                    LoadFragment(new SettingsFragment(), false);
+
+                }
+
+
+                return true;
             }
-            return true;
+
         });
+        LoadFragment(new HomeFragment(),true);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -43,9 +57,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-    private void replaceFragment(Fragment fragment){
+
+    private void LoadFragment(Fragment fragment, boolean check){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if(check){
+            fragmentTransaction.add(R.id.fram_layout, fragment);
+        }
+        else {
+            fragmentTransaction.replace(R.id.fram_layout, fragment);
+        }
         fragmentTransaction.commit();
     }
 }
