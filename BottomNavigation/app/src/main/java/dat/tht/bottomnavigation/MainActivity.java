@@ -1,11 +1,9 @@
 package dat.tht.bottomnavigation;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -24,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
         bottom_Navigation = findViewById(R.id.bottomNavigationView);
 
         frame_Layout = findViewById(R.id.fram_layout);
@@ -33,32 +36,25 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = menuItem.getItemId();
 
                 if (itemId == R.id.home) {
-                    LoadFragment(new HomeFragment(), false);
+                    replaceFragment(new HomeFragment(), false);
 
 
                 } else if (itemId == R.id.profile) {
-                    LoadFragment(new ProfileFragment(), false);
+                    replaceFragment(new ProfileFragment(), false);
 
                 } else if (itemId == R.id.settings) {
-                    LoadFragment(new SettingsFragment(), false);
+                    replaceFragment(new SettingsFragment(), false);
 
                 }
-
 
                 return true;
             }
 
         });
-        LoadFragment(new HomeFragment(),true);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        replaceFragment(new HomeFragment(),true);
     }
 
-    private void LoadFragment(Fragment fragment, boolean check){
+    private void replaceFragment(Fragment fragment, boolean check){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -66,8 +62,15 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.fram_layout, fragment);
         }
         else {
-            fragmentTransaction.replace(R.id.fram_layout, fragment);
+
+            Fragment currentFragment = fragmentManager.findFragmentById(R.id.fram_layout);
+            if (currentFragment != null) {
+                fragmentTransaction.remove(currentFragment);
+            }
+
+            fragmentTransaction.add(R.id.fram_layout, fragment);
         }
         fragmentTransaction.commit();
     }
+
 }
