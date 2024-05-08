@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -53,6 +55,18 @@ public class MainActivity extends AppCompatActivity {
         Cursor cs = db.rawQuery(sqlSelect,null);
         cs.moveToFirst();
 
+        ArrayList<book> dsSach = new ArrayList<book>();
+        while (cs.moveToNext())
+        {
+
+            int idSach = cs.getInt(0);
+            String tenSach = cs.getString(1);
+            int soTrang = cs.getInt(2);
+            float gia = cs.getFloat(3);
+            String mota = cs.getString(4);
+            book b = new book(idSach,tenSach,soTrang,gia,mota);
+            dsSach.add(b);
+        }
     }
 
 }
