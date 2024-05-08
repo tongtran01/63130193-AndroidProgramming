@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
             String mota = cs.getString(4);
             book b = new book(idSach,tenSach,soTrang,gia,mota);
             dsSach.add(b);
+            ArrayList<String> dsTenSach = new ArrayList<String>();
+            for (int i=0; i<dsSach.size(); i++ )
+                dsTenSach.add(dsSach.get(i).getBookName());
         }
     }
 
