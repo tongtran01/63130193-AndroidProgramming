@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -70,6 +72,22 @@ public class MainActivity extends AppCompatActivity {
             for (int i=0; i<dsSach.size(); i++ )
                 dsTenSach.add(dsSach.get(i).getBookName());
         }
+        ArrayList<book> books = new ArrayList<>();
+
+        if (cs.moveToFirst()) {
+            do {
+                int id = cs.getInt(0);
+                String name = cs.getString(1);
+                int pages = cs.getInt(2);
+                float price = cs.getFloat(3);
+                String description = cs.getString(4);
+                books.add(new book(id, name, pages, price, description));
+            } while (cs.moveToNext());
+        }
+        Adapter adapter = new Adapter(this, books);
+        RecyclerView recyclerView = findViewById(R.id.RecycleView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 }
