@@ -1,41 +1,39 @@
 package dat.tht.sqlitebookdb;
+
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.examViewHolder>{
-    ArrayList<book> list;
-    Context mcontext;
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+    private Context mContext;
+    private ArrayList<book> list;
 
-    public Adapter(ArrayList<book> list, Context mcontext) {
+    public Adapter(Context mContext, ArrayList<book> list) {
+        this.mContext = mContext;
         this.list = list;
-        this.mcontext = mcontext;
     }
 
     @NonNull
     @Override
-    public bookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mcontext).inflate(R.layout.itembook,parent,false);
-        return new bookViewHolder;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.itembook, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull bookViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         book book = list.get(position);
         holder.name.setText(book.getBookName());
-        holder.page.setText(book.getPage());
-        holder.price.setText(book.getPrice());
+        holder.page.setText(String.valueOf(book.getPage()));
+        holder.price.setText(String.valueOf(book.getPrice()));
         holder.description.setText(book.getDescription());
     }
 
@@ -44,25 +42,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.examViewHolder>{
         return list.size();
     }
 
-    final class bookViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView name,page,price,description;
 
-        TextView name;
-        TextView page;
-        TextView price;
-        View description;
-
-
-
-        public bookViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.name = itemView.findViewById(R.id.Name);
-            this.page = itemView.findViewById(R.id.Page);
-            this.price = itemView.findViewById(R.id.Price);
-            this.description = itemView.findViewById(R.id.Description);
+            name = itemView.findViewById(R.id.Name);
+            page = itemView.findViewById(R.id.Page);
+            price = itemView.findViewById(R.id.Price);
+            description = itemView.findViewById(R.id.Description);
         }
-
-
-
     }
-
 }
