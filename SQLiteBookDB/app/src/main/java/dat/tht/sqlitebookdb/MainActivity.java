@@ -73,17 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 dsTenSach.add(dsSach.get(i).getBookName());
         }
         ArrayList<book> books = new ArrayList<>();
-
-        if (cs.moveToFirst()) {
-            do {
-                int id = cs.getInt(0);
-                String name = cs.getString(1);
-                int pages = cs.getInt(2);
-                float price = cs.getFloat(3);
-                String description = cs.getString(4);
-                books.add(new book(id, name, pages, price, description));
-            } while (cs.moveToNext());
-        }
+        
         Adapter adapter = new Adapter(this, books);
         RecyclerView recyclerView = findViewById(R.id.RecycleView);
         recyclerView.setAdapter(adapter);
